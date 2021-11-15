@@ -5,7 +5,14 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+print("This program does not support polish characters in file's name.")
+if not os.path.exists('files_to_sent'):
+    os.mkdir('files_to_sent')
+    print("Directory " , 'files_to_sent' ,  " Created ")
 
+if not os.path.exists('sended'):
+    os.mkdir('sended')
+    print("Directory " , 'sended' ,  " Created ")
 
 sender_email = 'type your email here'
 receiver_email = 'type your kindle mail here'
