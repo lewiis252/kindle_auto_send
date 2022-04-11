@@ -4,6 +4,14 @@ from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import time
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
+sender_email = os.environ.get("sender_email")
+receiver_email = os.environ.get("receiver_email")
+password = os.environ.get("password")
 
 print("This program does not support polish characters in file's name.")
 if not os.path.exists('files_to_sent'):
@@ -14,21 +22,16 @@ if not os.path.exists('sended'):
     os.mkdir('sended')
     print("Directory " , 'sended' ,  " Created ")
 
-sender_email = 'type your email here'
-receiver_email = 'type your kindle mail here'
-
-password = 'type password to your email'
-
-
-
 '''
     For the given path, get the List of all files in the directory tree 
 '''
+
 from os import listdir
 from os.path import isfile, join
 onlyfiles = [f for f in listdir('files_to_sent') if isfile(join('files_to_sent', f))]
 
-
+# filename_path = "files_to_sent/test.txt"  # In same directory as script
+# filename = 'test.txt'
 
 print(onlyfiles)
 
@@ -68,6 +71,5 @@ for file in onlyfiles:
 
     os.replace('files_to_sent/{}'.format(file), 'sended/{}'.format(file))
 
-    
 print('Files send.')
 time.sleep(10)
