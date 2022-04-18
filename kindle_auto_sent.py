@@ -1,9 +1,8 @@
-import email, smtplib, ssl
+import smtplib, ssl
 import os
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 import time
 from dotenv import load_dotenv, find_dotenv
 
@@ -12,6 +11,7 @@ load_dotenv(find_dotenv())
 sender_email = os.environ.get("sender_email")
 receiver_email = os.environ.get("receiver_email")
 password = os.environ.get("password")
+print(sender_email)
 
 print("This program does not support polish characters in file's name.")
 if not os.path.exists('files_to_sent'):
