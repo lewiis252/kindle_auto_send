@@ -10,7 +10,7 @@ pip install -r requirements.txt
 ## Usage of app
 
 ```sh
-git@github.com:lewiis252/kindle_auto_sent_public.git
+git clone git@github.com:lewiis252/kindle_auto_sent_public.git
 ```
 
 After setting your virtual enviroment you must provide your emails and password - create .env file in the same directory as kindle_auto_sent.py and fill it like this:
